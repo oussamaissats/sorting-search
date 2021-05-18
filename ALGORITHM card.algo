@@ -1,0 +1,25 @@
+ALGORITHM card
+VAR
+
+    
+    i,j:INTEGER;
+    arr : ARRAY_OF INTEGER;
+    key:=0;
+    
+    
+BEGIN
+    write('entrer les valeurs du  tableau');
+    FOR i FROM 0 TO arr.length-1 STEP 1  DO
+        read(arr[i]);
+    END_FOR
+   FOR i FROM 1 TO arr.length-1 STEP 1  DO
+       key:=arr[i];
+       j:=i-1;
+       WHILE (j >= 0 && arr[j] > key) DO
+           arr[j + 1] = arr[j];  
+           j = j - 1;  
+       END_WHILE
+       arr[j + 1] = key;  
+   END_FOR
+   write('le tableau trié est ',arr);
+END
